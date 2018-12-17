@@ -1,0 +1,125 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>USD Converter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <style media="screen">
+       body {
+         margin-top: 40px;
+         background: #333;
+         color: #fff;
+       }
+     </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h1 class="display-4 text-center mb-3">$USD Converter</h1>
+          <form>
+            <div class="form-group">
+              <input
+              id="usdInput"
+              type="number"
+              class="form-control form-control-lg"
+              placeholder="enter USD amount">
+
+            </div>
+          </form>
+          <div id="output">
+            <div class="card card-primary mb-2">
+              <div class="card-block">
+                <h4>Euros</h4>
+                <div id="eurosOutput"></div>
+              </div>
+            </div>
+
+            <div class="card card-success mb-2">
+              <div class="card-block">
+                <h4>Yen</h4>
+                <div id="yenOutput"></div>
+              </div>
+            </div>
+
+            <div class="card card-danger mb-2">
+              <div class="card-block">
+                <h4>Pounds</h4>
+                <div id="poundsOutput"></div>
+              </div>
+            </div>
+
+            <div class="card card-info mb-2">
+              <div class="card-block">
+                <h4>Canadian Dollar</h4>
+                <div id="cdOutput"></div>
+              </div>
+            </div>
+
+            <div class="card card-warning mb-2">
+              <div class="card-block">
+                <h4>Swiss Franc</h4>
+                <div id="sfOutput"></div>
+              </div>
+            </div>
+
+            <div class="card card-primary mb-2">
+              <div class="card-block">
+                <h4>Chinese renminbi (CNH)</h4>
+                <div id="crOutput"></div>
+              </div>
+            </div>
+
+            <div class="card bg-success mb-2">
+              <div class="card-block">
+                <h4>South African Rand</h4>
+                <div id="sarOutput"></div>
+              </div>
+            </div>
+
+            <div class="card bg-danger mb-2">
+              <div class="card-block">
+                <h4>AUS Dollar (AUD)</h4>
+                <div id="ausOutput"></div>
+              </div>
+            </div>
+
+            <div class="card bg-info mb-2">
+              <div class="card-block">
+                <h4>New Zealand Dollar (NZD)</h4>
+                <div id="nzOutput"></div>
+              </div>
+            </div>
+
+            <div class="card bg-warning mb-2">
+              <div class="card-block">
+                <h4>Swedish Krona (SEK)</h4>
+                <div id="skOutput"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('output').style.visibility = 'hidden';
+      document.getElementById('usdInput').addEventListener('input', function(e){
+        document.getElementById('output').style.visibility = 'visible';
+        let dollar = e.target.value;
+        document.getElementById('eurosOutput').innerHTML = dollar*0.88;
+        document.getElementById('yenOutput').innerHTML = dollar*113.46;
+        document.getElementById('poundsOutput').innerHTML = dollar*0.78;
+        document.getElementById('cdOutput').innerHTML = dollar*1.33;
+        document.getElementById('sfOutput').innerHTML = dollar;
+        document.getElementById('crOutput').innerHTML = dollar*6.95;
+        document.getElementById('sarOutput').innerHTML = dollar*13.91;
+        document.getElementById('ausOutput').innerHTML = dollar*1.38;
+        document.getElementById('nzOutput').innerHTML = dollar*1.48;
+        document.getElementById('skOutput').innerHTML = dollar*9.09;
+
+      });
+    </script>
+  </body>
+</html>
